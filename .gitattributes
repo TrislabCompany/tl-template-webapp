@@ -1,0 +1,4 @@
+# Line endings stay LF in every checkout, also on Windows, so the shell script
+# and the nginx configuration work in the image.
+* text=auto eol=lf
+*.svg text eol=lf

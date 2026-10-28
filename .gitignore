@@ -1,0 +1,19 @@
+# Build output
+bin/
+obj/
+node_modules/
+dist/
+
+# Local settings: .env holds local values, .env.example is the committed copy.
+.env
+.env.*
+!.env.example
+
+# Editors and tools
+.vs/
+.vscode/
+.idea/
+*.user
+*.log
+.DS_Store
+TestResults/
