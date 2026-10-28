@@ -1,0 +1,12 @@
+# The build context of the web image is web/, so this file applies to it, not
+# the one at the repository root. Keeps the context small and free of secrets.
+node_modules
+dist
+**/*.test.ts
+**/*.test.tsx
+*.log
+.env
+.env.*
+.DS_Store
+Dockerfile
+.dockerignore

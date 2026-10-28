@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=./platform.schema.json
+# The images this repository builds and the sizing of its apps, within the
+# stamp's caps. ci / ci checks it on every PR. Raising a cap is a change to the
+# stamp, not to this file (docs/deployment.md).
+images:
+  web:      { dockerfile: web/Dockerfile, context: web }
+  api:      { dockerfile: src/Api/Dockerfile }
+  migrator: { dockerfile: src/Migrator/Dockerfile }
+apps:
+  web:
+    image: web
+    profile: Consumption
+    cpu: 0.25
+    memory: 0.5Gi
+    min_replicas: 0
+    max_replicas: 2
+  api:
+    image: api
+    init_image: migrator
+    profile: Consumption
+    cpu: 0.5
+    memory: 1Gi
+    min_replicas: 0
+    max_replicas: 2

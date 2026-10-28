@@ -1,0 +1,22 @@
+# The api and migrator images build from the repository root. Keeps the build
+# context small and free of secrets: no tests, no front end, no build output,
+# no local files. The web image builds from web/, with web/.dockerignore.
+.git
+.github
+.vscode
+.idea
+.vs
+docs
+web
+src/Tests
+**/bin
+**/obj
+**/node_modules
+*.log
+.env
+.env.*
+.DS_Store
+**/Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
