@@ -18,6 +18,6 @@ jobs:
   ci:
     permissions:
       contents: read
-    uses: TrislabCompany/tl-platform/.github/workflows/app-ci.yml@app-workflows/v0.1.0
+    uses: TrislabCompany/tl-platform/.github/workflows/app-ci.yml@app-workflows/v0.2.0
     with:
       test-command: dotnet test src/App.slnx && pnpm --dir web install --frozen-lockfile && pnpm --dir web test
