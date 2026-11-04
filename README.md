@@ -74,7 +74,7 @@ Every base image is pinned by digest. Renovate will keep the versions current; u
 
 1. **Run it locally:** `cp .env.example .env`, then `docker compose up --build`, and open <http://localhost:8080>. Before you push, run `dotnet test src/App.slnx` and `pnpm --dir web test`. [getting-started.md](docs/getting-started.md) also runs the API and the front end separately.
 2. **Open your first PR:** change something in `web/src/` or `src/Api/`, push a branch and open a PR. `ci / ci` must pass and a code owner must approve.
-3. **Deploy, release and promote:** a merge to `main` deploys to `dev`, a tag `vX.Y.Z` releases to the `release` tier, and a promotion moves a release to production. `deploy.yml` and `release.yml` do the first two, and the platform adds `promote.yml` before the first production Environment; [deployment.md](docs/deployment.md) explains how they work.
+3. **Deploy, release and promote:** a merge to `main` deploys to `dev`, a tag `vX.Y.Z` releases to the `release` tier, and a promotion moves a release to production. `deploy.yml` and `release.yml` do the first two, and the platform adds `promote.yml` before the first production Environment; [deployment.md](docs/deployment.md) explains how they work, and [its section 7](docs/deployment.md#7-steps-for-developers) lists your steps. The `release` skill runs them.
 4. **Add a migration:** change the model in `src/Api/Data/`, then `dotnet ef migrations add <Name>`. Keep it backward compatible ([deployment.md](docs/deployment.md#3-migrations)).
 5. **Add a setting or a secret:** add it to the stamp, then map it in `src/Api/Platform/PlatformConfiguration.cs` ([configuration.md](docs/configuration.md#5-add-a-setting-or-a-secret)).
 6. **Add sign-in** before your first production Environment: choose what your product needs, and protect the API's endpoints and the front end's routes with it.
@@ -84,4 +84,4 @@ Every base image is pinned by digest. Renovate will keep the versions current; u
 - [Getting started](docs/getting-started.md): run the app with Docker Compose or piece by piece, the services, and the tests.
 - [Architecture](docs/architecture.md): the images, the apps, the migrator, where data lives and the request path.
 - [Configuration](docs/configuration.md): the settings, `PlatformConfiguration.cs`, `/config.json`, the `/api` upstream, and how to add a setting or a secret.
-- [Deployment](docs/deployment.md): Environments, deploy, release and promote, migrations, `platform.yaml` and the caps, and how to ask for more.
+- [Deployment](docs/deployment.md): Environments, deploy, release and promote, migrations, `platform.yaml` and the caps, and how to ask for more. Section 7: the steps for developers.
